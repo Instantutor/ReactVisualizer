@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import './Components/Node.js';
+import Tree from './Components/Tree'
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className="container">
+      <Tree/>
     </div>
   );
 }

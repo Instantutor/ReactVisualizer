@@ -1,16 +1,29 @@
+import PropTypes from 'prop-types'
 
+const Node = ({color, nodeName, parent}) => {
 
-const Node = () => {
-
-    const onClick = () => {
-        console.log('Node Clicked')
-    }
+  const onClick = () => {
+    console.log('The parent of this node is ', parent)
+  }
 
   return (
-    <div>Node</div>
+
+    <node onClick={onClick} style={{ backgroundColor: color}}>
+      {nodeName}
+    </node>
+
   )
 }
 
-export default Node
+Node.defaultProps = {
+  color: 'black',
+  nodeName: 'Default Node'
+}
 
-//Mermaid.js, look into some different libraries for making a flowchart. wiz.js is also something to look into.
+Node.propTypes = {
+  text: PropTypes.string,
+  color: PropTypes.string,
+  parent: PropTypes.string,
+}
+
+export default Node
