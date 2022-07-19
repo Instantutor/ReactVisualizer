@@ -1,6 +1,6 @@
-//Before I install, I'm just going to write the graph in here.
+//Not using this for mermaid anymore, going to use this as a DOT file for vis.js
 
-flowchart TD 
+digraph test_graph {
     node1([New request made by users]) --> node2([Student selects tutor to ping])
     node2([Student selects tutor to ping]) --> node3([Tutor sees request])
     node3([Tutor sees request]) -- Tutor Accepts Request --> node4([Student can give final confirmation])
@@ -12,3 +12,4 @@ flowchart TD
     node7([Tutoring in progress]) -- Tutor or student closes request --> node10([Request closed])
     node10([Request closed]) -- Student rates --> node11([Student rated])
     node10([Request closed]) -- Tutor rates --> node12([Tutor rated])
+}
