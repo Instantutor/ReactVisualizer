@@ -1,10 +1,12 @@
 import './App.css';
-import Tree from './Components/Tree'
+import VisNetwork from './Components/VisNetwork';
 
 function App() {
   return (
     <div className="container">
-      <Tree/>
+      <p>This is displaying.</p>
+      <VisNetwork>
+      </VisNetwork>
     </div>
   );
 }
