@@ -7,14 +7,34 @@ const options = {
     }
 }
 
-const intake = () => {
-
+const Intake = () => {
+    const createNode = (x, y) => {
+        const color = 'red';
+        setState(({ graph: { nodes, edges }, counter, ...rest }) => {
+          const id = counter + 1;
+          const from = Math.floor(Math.random() * (counter - 1)) + 1;
+          return {
+            graph: {
+              nodes: [
+                ...nodes,
+                { id, label: `Node ${id}`, color, x, y }
+              ],
+              edges: [
+                ...edges,
+                { from, to: id }
+              ]
+            },
+            counter: id,
+            ...rest
+          }
+        });
+    }
     const [state, setState] = useState({
         counter: 5,
         graph: {
             nodes: [
-                {id: 1, label: "Head", color: "white"},
-                {id: 2, label: "Tail", color: "black"}
+                {id: 1, label: "Head", color: "red"},
+                {id: 2, label: "Tail", color: "blue"}
             ],
             edges: [
                 {from: 1, to: 2}
@@ -27,6 +47,9 @@ const intake = () => {
                 console.log("Selected edges:");
                 console.log(edges);
                 alert("Selected node " + nodes);
+            },
+            doubleClick: ({ pointer: { canvas } }) => {
+                createNode(canvas.x, canvas.y);
             }
         }
     })
@@ -39,4 +62,4 @@ const intake = () => {
   )
 }
 
-export default intake
+export default Intake

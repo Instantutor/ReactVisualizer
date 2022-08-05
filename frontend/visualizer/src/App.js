@@ -1,7 +1,7 @@
 import './App.css';
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import intake from './Components/intake.js'
+import Intake from './Component/intake'
 
 function App() {
   return (
@@ -11,8 +11,14 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
       </header>
+      <Intake/>
     </div>
   );
 }
+
+ReactDOM.render(
+  <Intake/>,
+  document.getElementById("root")
+);
 
 export default App;
