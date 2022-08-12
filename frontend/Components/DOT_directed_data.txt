@@ -1,0 +1,11 @@
+//Not using this for mermaid anymore, going to use this as a DOT file for vis.js
+
+digraph test_graph {
+    1([New request made by users]) -> 2([Student selects tutor to ping]) -> 3([Tutor sees request])
+    3([Tutor sees request]) -> 4([Student can give final confirmation]) -> 6([Tutor is removed from the students list])
+    3([Tutor sees request]) -> 5([Tutor is removed from the student list])
+    4([Student can give final confirmation]) -> 7([Tutoring in progress]) -> 8([Student cancelled])
+    7([Tutoring in progress]) -> 9([Tutor cancelled])
+    7([Tutoring in progress]) -> 10([Request closed]) -> 11([Student rated])
+    10([Request closed]) -> 12([Tutor rated])
+}
