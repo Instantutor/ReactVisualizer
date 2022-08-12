@@ -1,3 +1,0 @@
-Basically, going to aim for making a tree of boxes that display a bulleted list of properties.
-
-After getting that working, Focus on getting the nodes to highlight if a property is clicked.
